@@ -6,14 +6,71 @@
 </head>
 <body>
 
+    <header class="banner">
+        <div class="wrapper">
+            <a class="logo" href="#">Logo</a>
+            <a class="navigation-toggle" href="#">Menu</a>
+
+            <nav class="navigation">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
     <div class="wrapper" style="padding: 40px">
-        <div class="raised card">
-            <h3 class="title">Card</h3>
+
+        <div class="gallery">
+            <a class="image" href="#"><img src="http://unsplash.it/300/400"></a>
+            <a class="image" href="#"><img src="http://unsplash.it/300/400"></a>
+            <a class="image" href="#"><img src="http://unsplash.it/300/400"></a>
+            <a class="image" href="#"><img src="http://unsplash.it/300/400"></a>
+            <a class="image" href="#"><img src="http://unsplash.it/300/400"></a>
+            <a class="image" href="#"><img src="http://unsplash.it/300/400"></a>
+            <a class="image" href="#"><img src="http://unsplash.it/300/400"></a>
+            <a class="image" href="#"><img src="http://unsplash.it/300/400"></a>
+            <a class="image" href="#"><img src="http://unsplash.it/300/400"></a>
+            <a class="image" href="#"><img src="http://unsplash.it/300/400"></a>
+            <a class="image" href="#"><img src="http://unsplash.it/300/400"></a>
+            <a class="image" href="#"><img src="http://unsplash.it/300/400"></a>
+        </div>
+
+    </div>
+
+    <div class="wrapper" style="padding: 40px">
+        <div class="card">
+            <h3 class="title">Contact Form Drop-in</h3>
             <div class="content">
-                <p>I'm some text with <span class="red label">label</span></p>
+                <form>
+                    <div class="field">
+                        <label for="name" class="is-hidden">Name</label>
+                        <input type="text" name="name" placeholder="Name">
+                    </div>
+                    <div class="field">
+                        <label for="email" class="is-hidden">E-mail Address</label>
+                        <input class="is-invalid" type="email" name="email" placeholder="E-mail Address">
+                    </div>
+                    <div class="field">
+                        <label for="phone" class="is-hidden">Phone Number</label>
+                        <input type="tel" name="phone" placeholder="Phone Number">
+                    </div>
+                    <div class="field">
+                        <label for="message" class="is-hidden">Message</label>
+                        <textarea name="message" placeholder="Message"></textarea>
+                    </div>
+                    <div class="field text align right">
+                        <button class="positive" type="submit">Send</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="theme/default/assets/js/main.js"></script>
 </body>
 </html>

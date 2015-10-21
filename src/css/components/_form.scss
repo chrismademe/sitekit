@@ -1,3 +1,11 @@
+form {
+
+    .field {
+        @include rem(margin, 0.9rem 0);
+    }
+
+}
+
 fieldset {
     border: 1px solid $light-grey;
     border-radius: $border-radius;
@@ -14,11 +22,16 @@ fieldset {
 }
 
 label {
+    display: block;
     font-weight: 600;
-    margin-bottom: 0.6em;
+    margin-bottom: 0.2em;
 
     &.required::after {
         content: "*";
+    }
+
+    &.is-hidden {
+        display: none;
     }
 
     abbr {
@@ -32,6 +45,7 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="email"],
 input[type="tel"],
+input[type="search"],
 select,
 textarea {
     background-color: $white;
@@ -41,6 +55,10 @@ textarea {
     @include rem(font-size, $input-font-size);
     @include rem(padding, 0.85rem);
     width: 100%;
+
+    &.is-invalid {
+        border-color: $red;
+    }
 
     &:hover {
         border: 1px solid $grey;

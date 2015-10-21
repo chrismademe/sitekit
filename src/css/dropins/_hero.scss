@@ -1,0 +1,117 @@
+@mixin hero($size: 'medium') {
+    background-image: url('http://unsplash.it/1800/450');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+    @if $size == 'viewport' {
+        height: 100vh;
+    }
+
+    @if $size == 'small' {
+        @include rem(height, 15rem);
+
+        @include bp('small') {
+            @include rem(height, 17.5rem);
+        }
+
+        @include bp('medium') {
+            @include rem(height, 21rem);
+        }
+
+        @include bp('large') {
+            @include rem(height, 27rem);
+        }
+    }
+
+    @if $size == 'medium' {
+        @include rem(height, 18rem);
+
+        @include bp('small') {
+            @include rem(height, 21rem);
+        }
+
+        @include bp('medium') {
+            @include rem(height, 25.5rem);
+        }
+
+        @include bp('large') {
+            @include rem(height, 34rem);
+        }
+    }
+
+    @if $size == 'large' {
+        @include rem(height, 24rem);
+
+        @include bp('small') {
+            @include rem(height, 28.5rem);
+        }
+
+        @include bp('medium') {
+            @include rem(height, 34rem);
+        }
+
+        @include bp('large') {
+            @include rem(height, 41rem);
+        }
+    }
+
+    @if $size == 'extra large' {
+        @include rem(height, 27.5rem);
+
+        @include bp('small') {
+            @include rem(height, 32.5rem);
+        }
+
+        @include bp('medium') {
+            @include rem(height, 39rem);
+        }
+
+        @include bp('large') {
+            @include rem(height, 48rem);
+        }
+    }
+}
+
+@mixin hero-overlay($color: $black, $opacity: 0.4) {
+    &:after {
+        background-color: rgba($color, $opacity);
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.hero {
+    @include hero();
+
+    // Sizes
+    &.viewport {
+        @include hero('viewport');
+    }
+
+    &.small {
+        @include hero('small');
+    }
+
+    &.large {
+        @include hero('large');
+    }
+
+    &.extra.large {
+        @include hero('extra large');
+    }
+
+    // Overlay
+    &.overlay,
+    &.faded {
+        @include hero-overlay($black);
+
+        &.white {
+            @include hero-overlay($white);
+        }
+    }
+}

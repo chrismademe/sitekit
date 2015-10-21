@@ -1,7 +1,11 @@
 body {
-    color: $dark-grey;
+    color: $black;
     font-family: $body-font-family;
     font-size: $body-font-size;
+}
+
+p {
+    line-height: 1.5;
 }
 
 .wrapper,

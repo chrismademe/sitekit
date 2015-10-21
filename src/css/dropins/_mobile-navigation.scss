@@ -1,0 +1,71 @@
+@mixin mobile-navigation($background-color: $white, $link-color: $dark-grey, $shadow: 3em) {
+    background-color: $background-color;
+    box-sizing: border-box;
+    @include rem(padding, 4.2rem 0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    @include rem(width, 28rem);
+    z-index: 99999;
+
+    // Shadow
+    @if $shadow != 0 {
+        box-shadow: 0 0 $shadow rgba($black, 0.15);
+    }
+
+    // Right
+    &.right {
+        left: auto;
+        right: 0;
+    }
+
+    ul {
+        margin: 0;
+
+        li {
+            padding: 0;
+
+            a {
+                color: $link-color;
+                display: block;
+                font-size: 1.4em;
+                @include rem(padding, 0.55rem 2.4rem);
+            }
+        }
+    }
+
+    > .close {
+        color: $link-color;
+        display: block;
+        @include rem(font-size, 2.8rem);
+        @include rem(padding, 1.2rem 2.4rem);
+        position: absolute;
+        top: 0;
+        right: 0;
+        opacity: 0.5;
+    }
+}
+
+.mobile-navigation {
+    @include mobile-navigation();
+
+    // Navigation with brand colour background
+    &.brand {
+        @include mobile-navigation($brand, $white);
+    }
+
+    &.accent {
+        @include mobile-navigation($accent, $white);
+    }
+
+    // Dark
+    &.dark {
+        @include mobile-navigation($dark-grey, $white);
+    }
+
+    // Black
+    &.black {
+        @include mobile-navigation($black, $white);
+    }
+}

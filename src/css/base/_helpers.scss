@@ -1,0 +1,18 @@
+// Text Helpers
+.text {
+
+    &.align.left {
+        text-align: left;
+    }
+
+    &.align.right {
+        text-align: right;
+    }
+
+    &.align.center,
+    &.align.centre,
+    &.align.middle {
+        text-align: center;
+    }
+
+}

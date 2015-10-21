@@ -1,0 +1,20 @@
+body {
+    color: $dark-grey;
+    font-family: $body-font-family;
+    font-size: $body-font-size;
+}
+
+.wrapper,
+.container {
+    box-sizing: border-box;
+    width: 100%;
+
+    @include bp('large') {
+        margin: 0 auto;
+        @include rem(width, 96rem);
+    }
+
+    @include bp('extra large') {
+        @include rem(width, 114rem);
+    }
+}

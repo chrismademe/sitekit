@@ -1,0 +1,63 @@
+@mixin card($background-color: $white, $text-color: $dark-grey) {
+    background-color: $background-color;
+    border: 1px solid $light-grey;
+    border-radius: $border-radius;
+    color: $text-color;
+
+    .title {
+        border-bottom: 1px solid $light-grey;
+        @include rem(font-size, 1.7rem);
+        @include rem(padding, 1rem 2.4rem);
+    }
+
+    > .content {
+        @include rem(padding, 2.4rem);
+    }
+}
+
+@mixin card-level($level: 1) {
+    @if $level == 1 {
+        box-shadow: 0 0 .8em rgba($black, 0.1);
+    }
+
+    @if $level == 2 {
+        box-shadow: 0 0 .8em rgba($black, 0.15);
+    }
+
+    @if $level == 3 {
+        box-shadow: 0 0 .8em rgba($black, 0.2);
+    }
+
+    @if $level == 4 {
+        box-shadow: 0 0 .8em rgba($black, 0.25);
+    }
+
+    @if $level == 5 {
+        box-shadow: 0 0 .8em rgba($black, 0.35);
+    }
+}
+
+.card {
+    @include card();
+
+    // Levels
+    &.raised {
+        @include card-level();
+
+        &.two {
+            @include card-level(2);
+        }
+
+        &.three {
+            @include card-level(3);
+        }
+
+        &.four {
+            @include card-level(4);
+        }
+
+        &.five {
+            @include card-level(5);
+        }
+    }
+}

@@ -1,0 +1,89 @@
+@mixin label($background-color: $white, $text-color: $dark-grey) {
+    background-color: $background-color;
+    border-radius: $border-radius;
+    color: $text-color;
+    display: inline-block;
+    font-size: .75em;
+    font-weight: 600;
+    @include rem(padding, 0.3rem 0.5rem);
+    text-shadow: 1px 1px 0 rgba($black, 0.2);
+    vertical-align: middle;
+}
+
+@mixin label-size($size) {
+    @if $size == "extra small" {
+        font-size: .6em;
+        @include rem(padding, 0.15rem 0.3rem);
+    }
+
+    @if $size == "medium" {
+        font-size: .8em;
+        @include rem(padding, 0.5rem 0.8rem);
+    }
+
+    @if $size == "large" {
+        font-size: .9em;
+        @include rem(padding, 0.6rem 0.9rem);
+    }
+
+    @if $size == "extra large" {
+        font-size: 1em;
+        @include rem(padding, 0.8rem 1.1rem);
+    }
+}
+
+.label {
+    @include label();
+
+    // Colours
+    &.positive,
+    &.success,
+    &.green {
+        @include label($green, $white);
+    }
+
+    &.negative,
+    &.error,
+    &.red {
+        @include label($red, $white);
+    }
+
+    &.warning,
+    &.yellow {
+        @include label($yellow, $white);
+    }
+
+    &.primary,
+    &.blue {
+        @include label($blue, $white);
+    }
+
+    &.black {
+        @include label($black, $white);
+    }
+
+    &.brand {
+        @include label($brand, $white);
+    }
+
+    &.accent {
+        @include label($accent, $white);
+    }
+
+    // Sizes
+    &.extra.small {
+        @include label-size('extra small');
+    }
+
+    &.medium {
+        @include label-size('medium');
+    }
+
+    &.large {
+        @include label-size('large');
+    }
+
+    &.extra.large {
+        @include label-size('extra large');
+    }
+}

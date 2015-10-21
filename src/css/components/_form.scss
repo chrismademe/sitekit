@@ -1,0 +1,69 @@
+fieldset {
+    border: 1px solid $light-grey;
+    border-radius: $border-radius;
+    @include rem(margin, 1.5rem 0);
+    @include rem(padding, 1.4rem);
+
+    &:first-of-type {
+        margin-top: 0;
+    }
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 0.6em;
+
+    &.required::after {
+        content: "*";
+    }
+
+    abbr {
+        display: none;
+    }
+}
+
+input[type="text"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    background-color: $white;
+    border: 1px solid $light-grey;
+    border-radius: $border-radius;
+    box-sizing: border-box;
+    @include rem(font-size, $input-font-size);
+    @include rem(padding, 0.85rem);
+    width: 100%;
+
+    &:hover {
+        border: 1px solid $grey;
+    }
+
+    &:focus {
+        appearance: none;
+        border-color: $blue;
+        box-shadow: none;
+        outline: none;
+    }
+}
+
+input[type="search"] {
+    appearance: none;
+}
+
+select {
+    background: url('../images/select.png') right no-repeat white;
+    @include rem(padding, 0.85rem 1.85rem 0.85rem 0.85rem);
+}
+
+textarea {
+    @include rem(height, 15rem);
+    resize: vertical;
+}

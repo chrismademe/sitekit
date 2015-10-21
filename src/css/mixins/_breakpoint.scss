@@ -1,0 +1,45 @@
+@mixin bp($screen, $query: 'min-width') {
+
+    // Pre-defined breakpoints
+    @if type-of($screen) == string {
+
+        @if $screen == 'extra small' {
+            @media (max-width: $bp-small) {
+                @content;
+            }
+        }
+
+        @if $screen == 'small' {
+            @media (min-width: $bp-small) {
+                @content;
+            }
+        }
+
+        @if $screen == 'medium' {
+            @media (min-width: $bp-medium) {
+                @content;
+            }
+        }
+
+        @if $screen == 'large' {
+            @media (min-width: $bp-large) {
+                @content;
+            }
+        }
+
+        @if $screen == 'extra large' {
+            @media (min-width: $bp-xlarge) {
+                @content;
+            }
+        }
+
+    // Custom queries
+    } @else {
+
+        @media(#{$query}: $screen) {
+            @content;
+        }
+
+    }
+
+}

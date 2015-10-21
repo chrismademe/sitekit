@@ -1,0 +1,170 @@
+@mixin button($background-color: $white, $text-color: $dark-grey) {
+    background-color: $background-color;
+    border: 0;
+    border-radius: $border-radius;
+    box-sizing: border-box;
+    @include button-display;
+    @include button-size;
+    color: $text-color;
+    line-height: 1em;
+    text-decoration: none;
+
+    &:hover {
+        background-color: darken($background-color, 8%);
+    }
+}
+
+@mixin button-display($display: inline-block) {
+    display: $display;
+
+    @if $display == block {
+        text-align: center;
+        width: 100%;
+    }
+}
+
+@mixin button-outline($color: $dark-grey) {
+    background-color: transparent;
+    border: 1px solid $color;
+    color: $color;
+
+    &:hover {
+        background-color: $color;
+        color: $white;
+    }
+}
+
+@mixin button-size($size: medium) {
+    @if $size == "mini" {
+        @include rem(font-size, 1.2rem);
+        @include rem(padding, 0.6rem 0.9rem);
+    }
+
+    @if $size == "small" {
+        @include rem(font-size, 1.3rem);
+        @include rem(padding, 0.7rem 1rem);
+    }
+
+    @if $size == "medium" {
+        @include rem(font-size, 1.5rem);
+        @include rem(padding, 0.8rem 1.2rem);
+    }
+
+    @if $size == "large" {
+        @include rem(font-size, 1.6rem);
+        @include rem(padding, 1rem 1.4rem);
+    }
+
+    @if $size == "huge" {
+        @include rem(font-size, 1.8rem);
+        @include rem(padding, 1.2rem 1.7rem);
+    }
+}
+
+.button,
+button,
+input[type="submit"],
+input[type="button"] {
+    @include button();
+
+    &.outline {
+        @include button-outline();
+    }
+
+    // Colours
+    &.positive,
+    &.green,
+    &.success {
+        @include button($green, $white);
+
+        &.outline {
+            @include button-outline($green);
+        }
+    }
+
+    &.negative,
+    &.red,
+    &.error {
+        @include button($red, $white);
+
+        &.outline {
+            @include button-outline($red);
+        }
+    }
+
+    &.warning,
+    &.yellow {
+        @include button($yellow, $white);
+
+        &.outline {
+            @include button-outline($yellow);
+        }
+    }
+
+    &.primary,
+    &.blue {
+        @include button($blue, $white);
+
+        &.outline {
+            @include button-outline($blue);
+        }
+    }
+
+    &.brand {
+        @include button($brand, $white);
+
+        &.outline {
+            @include button-outline($brand);
+        }
+    }
+
+    &.accent {
+        @include button($accent, $white);
+
+        &.outline {
+            @include button-outline($accent);
+        }
+    }
+
+    // Sizes
+    &.mini {
+        @include button-size(mini);
+    }
+
+    &.small {
+        @include button-size(small);
+    }
+
+    &.large {
+        @include button-size(large);
+    }
+
+    &.huge {
+        @include button-size(huge);
+    }
+
+    // Display
+    &.block {
+        @include button-display(block);
+    }
+}
+
+// Button Group
+.buttons {
+    font-size: 0;
+
+    .button {
+        border-radius: 0;
+        @include rem(font-size, $input-font-size);
+
+        &:first-child {
+            border-bottom-left-radius: $border-radius;
+            border-top-left-radius: $border-radius;
+        }
+
+        &:last-child {
+            border-bottom-right-radius: $border-radius;
+            border-top-right-radius: $border-radius;
+        }
+    }
+}

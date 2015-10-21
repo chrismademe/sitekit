@@ -1,0 +1,40 @@
+@mixin alert($background-color: $light-grey, $text-color: $dark-grey) {
+    background-color: $background-color;
+    border-radius: $border-radius;
+    color: $text-color;
+    @include rem(padding, 1.4rem 1.6rem);
+}
+
+.alert {
+    @include alert;
+
+    &.positive,
+    &.success,
+    &.green {
+        @include alert($green, $white);
+    }
+
+    &.negative,
+    &.error,
+    &.red {
+        @include alert($red, $white);
+    }
+
+    &.warning,
+    &.yellow {
+        @include alert($yellow, $white);
+    }
+
+    &.primary,
+    &.blue {
+        @include alert($blue, $white);
+    }
+
+    &.brand {
+        @include alert($brand, $white);
+    }
+
+    &.accent {
+        @include alert($brand, $white);
+    }
+}

@@ -5,7 +5,7 @@
     color: $text-color;
     @include rem(margin-top, 2.4rem);
 
-    &.first-of-type {
+    &:first-child {
         margin-top: 0;
     }
 

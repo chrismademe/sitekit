@@ -1,0 +1,49 @@
+@mixin article() {
+    @include rem(margin-top, 5.4rem);
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    .content {
+        @include rem(padding-top, 1.4rem);
+
+        h2 {
+            @include rem(font-size, 1.9rem);
+            @include rem(padding-bottom, 0.8rem);
+        }
+
+        .meta {
+            color: $grey;
+            font-size: 0.85em;
+            line-height: 0.8em;
+        }
+
+        p {
+            color: $dark-grey;
+        }
+    }
+
+    @include bp(500px) {
+        @include clearfix;
+
+        .image,
+        .content {
+            @include column();
+        }
+
+        .image {
+            @include span-columns(4);
+        }
+
+        .content {
+            @include span-columns(8);
+            padding-top: 0;
+        }
+    }
+
+}
+
+.article {
+    @include article();
+}

@@ -1,0 +1,26 @@
+.page-container {
+    @include rem(padding, 2.4rem);
+
+    .sidebar {
+        @include rem(padding-top, 2.4rem);
+    }
+
+    @include bp('large') {
+        @include clearfix;
+        @include rem(padding, 4.2rem 0);
+
+        .main,
+        .sidebar {
+            @include column();
+        }
+
+        .main {
+            @include span-columns(8);
+        }
+
+        .sidebar {
+            @include span-columns(4);
+            padding-top: 0;
+        }
+    }
+}

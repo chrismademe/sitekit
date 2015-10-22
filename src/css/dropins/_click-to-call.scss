@@ -1,0 +1,88 @@
+@mixin click-to-call($position: 'static') {
+    background-color: $accent;
+    box-sizing: border-box;
+    color: $white;
+    display: block;
+    font-weight: 600;
+    @include rem(padding, 1rem);
+    text-align: center;
+
+    @if $position == 'fixed top' {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9999;
+    }
+
+    @if $position == 'fixed bottom' {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9999;
+    }
+
+    @if $position == 'absolute top' {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9999;
+    }
+
+    @if $position == 'absolute bottom' {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9999;
+    }
+
+    @include bp('medium') {
+        display: none;
+    }
+}
+
+@mixin click-to-call-color($background-color: $brand, $color: $white) {
+    background-color: $background-color;
+    color: $color;
+}
+
+.click-to-call {
+    @include click-to-call();
+
+    // Positioning
+    &.fixed {
+        @include click-to-call('fixed top');
+
+        &.bottom {
+            @include click-to-call('fixed bottom');
+        }
+    }
+
+    &.absolute {
+        @include click-to-call('absolute top');
+
+        &.bottom {
+            @include click-to-call('absolute bottom');
+        }
+    }
+
+    // Preset Colours
+    &.black {
+        @include click-to-call-color($black);
+    }
+
+    &.dark {
+        @include click-to-call-color($dark-grey);
+    }
+
+    &.white {
+        @include click-to-call-color($white, $brand);
+    }
+
+    &.brand {
+        @include click-to-call-color($brand);
+    }
+}

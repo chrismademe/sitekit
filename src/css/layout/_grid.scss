@@ -1,0 +1,59 @@
+/**
+ * Grid
+ */
+@mixin column {
+    box-sizing: border-box;
+    float: left;
+    position: relative;
+    margin-right: $gutter;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+@mixin span-columns($num-columns) {
+    $num-gutters: $columns - 1; // Gutters will always be 1 less then columns
+    $gutter-space: $num-gutters * $gutter; // Finding total space taken up by gutters
+    $remaining-space: 100 - $gutter-space; // Subtracting the total gutter space from 100(%)
+    $column-width: $remaining-space / $columns; // Finding column width by dividing space left by number of columns
+    $width: ($num-columns) * $column-width + ($gutter * ($num-columns - 1) );
+    width: $width;
+}
+
+.row {
+    @include clearfix;
+}
+
+.column,
+.columns {
+    @include column();
+}
+
+// Column numbers
+$numbers: (
+    1: one,
+    2: two,
+    3: three,
+    4: four,
+    5: five,
+    6: six,
+    7: seven,
+    8: eight,
+    9: nine,
+    10: ten,
+    11: eleven,
+    12: twelve
+);
+
+@for $column from 1 through 12 {
+    @if $column > 1 {
+        .#{map-get($numbers, $column)}.columns {
+            @include span-columns($column);
+        }
+    } @else {
+        .#{map-get($numbers, $column)}.column {
+            @include span-columns($column);
+        }
+    }
+}

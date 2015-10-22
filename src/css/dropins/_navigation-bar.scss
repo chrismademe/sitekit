@@ -1,0 +1,37 @@
+@mixin navigation-bar($breakpoint: $bp-large, $background-color: $accent, $link-color: $white, $link-padding-vertical: 1.2rem, $link-padding-horizontal: 1.2rem) {
+    display: none;
+
+    @include bp($breakpoint) {
+        background-color: $background-color;
+        @include clearfix;
+        display: block;
+
+        ul {
+            margin: 0;
+
+            li {
+                float: left;
+                padding: 0;
+                position: relative;
+
+                a {
+                    color: $link-color;
+                    display: block;
+                    @include rem(padding, $link-padding-vertical $link-padding-horizontal);
+
+                    &:hover {
+                        background-color: lighten($background-color, 7%);
+                    }
+                }
+
+                &:first-child {
+                    @include rem(margin-left, -$link-padding-horizontal);
+                }
+            }
+        }
+    }
+}
+
+.navigation-bar {
+    @include navigation-bar();
+}

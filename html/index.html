@@ -6,69 +6,102 @@
 </head>
 <body>
 
+    <a class="click-to-call" href="tel:+4412345567">Call Us: 01689 422310</a>
+
     <header class="banner">
         <div class="wrapper">
             <a class="logo" href="#">Logo</a>
-            <a class="navigation-toggle" href="#">Menu</a>
+            <a class="navigation-toggle" href="#"><i class="ion ion-navicon"></i></a>
 
-            <nav class="navigation">
+            <!--<nav class="navigation">
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">About Us</a></li>
                     <li><a href="#">Services</a></li>
                     <li><a href="#">Contact Us</a></li>
                 </ul>
-            </nav>
+            </nav>-->
         </div>
     </header>
 
-    <div class="wrapper" style="padding: 40px">
-
-        <div class="gallery">
-            <a class="image" href="#"><img src="http://unsplash.it/300/400"></a>
-            <a class="image" href="#"><img src="http://unsplash.it/300/400"></a>
-            <a class="image" href="#"><img src="http://unsplash.it/300/400"></a>
-            <a class="image" href="#"><img src="http://unsplash.it/300/400"></a>
-            <a class="image" href="#"><img src="http://unsplash.it/300/400"></a>
-            <a class="image" href="#"><img src="http://unsplash.it/300/400"></a>
-            <a class="image" href="#"><img src="http://unsplash.it/300/400"></a>
-            <a class="image" href="#"><img src="http://unsplash.it/300/400"></a>
-            <a class="image" href="#"><img src="http://unsplash.it/300/400"></a>
-            <a class="image" href="#"><img src="http://unsplash.it/300/400"></a>
-            <a class="image" href="#"><img src="http://unsplash.it/300/400"></a>
-            <a class="image" href="#"><img src="http://unsplash.it/300/400"></a>
+    <nav class="navigation-bar">
+        <div class="wrapper">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
         </div>
+    </nav>
 
-    </div>
+    <section class="hero"></section>
 
-    <div class="wrapper" style="padding: 40px">
-        <div class="card">
-            <h3 class="title">Contact Form Drop-in</h3>
-            <div class="content">
-                <form>
-                    <div class="field">
-                        <label for="name" class="is-hidden">Name</label>
-                        <input type="text" name="name" placeholder="Name">
+    <section class="page-container">
+        <div class="wrapper">
+            <main class="main">
+
+                <article class="article">
+                    <div class="image">
+                        <img src="http://unsplash.it/500/300">
                     </div>
-                    <div class="field">
-                        <label for="email" class="is-hidden">E-mail Address</label>
-                        <input class="is-invalid" type="email" name="email" placeholder="E-mail Address">
+                    <div class="content">
+                        <h2>Article title goes here</h2>
+                        <div class="meta">
+                            <span class="date">Posted on 12th October 2015</span>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et nibh nulla. Curabitur tincidunt, sapien vel fringilla tempor, mi metus sollicitudin mi, nec rhoncus diam eros quis sapien.</p>
+                        <p><a class="large accent button" href="#">Read more</a></p>
                     </div>
-                    <div class="field">
-                        <label for="phone" class="is-hidden">Phone Number</label>
-                        <input type="tel" name="phone" placeholder="Phone Number">
+                </article>
+
+                <article class="article">
+                    <div class="image">
+                        <img src="http://unsplash.it/500/300">
                     </div>
-                    <div class="field">
-                        <label for="message" class="is-hidden">Message</label>
-                        <textarea name="message" placeholder="Message"></textarea>
+                    <div class="content">
+                        <h2>Article title goes here</h2>
+                        <div class="meta">
+                            <span class="date">Posted on 12th October 2015</span>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et nibh nulla. Curabitur tincidunt, sapien vel fringilla tempor, mi metus sollicitudin mi, nec rhoncus diam eros quis sapien.</p>
+                        <p><a class="large accent button" href="#">Read more</a></p>
                     </div>
-                    <div class="field text align right">
-                        <button class="positive" type="submit">Send</button>
+                </article>
+
+            </main>
+            <div class="sidebar">
+
+                <div class="card">
+                    <h3 class="title">Contact Form Drop-in</h3>
+                    <div class="content">
+                        <form>
+                            <div class="field">
+                                <label for="name" class="is-hidden">Name</label>
+                                <input type="text" name="name" placeholder="Name">
+                            </div>
+                            <div class="field">
+                                <label for="email" class="is-hidden">E-mail Address</label>
+                                <input class="is-invalid" type="email" name="email" placeholder="E-mail Address">
+                            </div>
+                            <div class="field">
+                                <label for="phone" class="is-hidden">Phone Number</label>
+                                <input type="tel" name="phone" placeholder="Phone Number">
+                            </div>
+                            <div class="field">
+                                <label for="message" class="is-hidden">Message</label>
+                                <textarea name="message" placeholder="Message"></textarea>
+                            </div>
+                            <div class="field text align right">
+                                <button class="positive" type="submit">Send</button>
+                            </div>
+                        </form>
                     </div>
-                </form>
+                </div>
+
             </div>
         </div>
-    </div>
+    </section>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="theme/default/assets/js/main.js"></script>

@@ -8,9 +8,10 @@
     }
 
     .navigation-toggle {
+        @include rem(font-size, 2.65rem);
         position: absolute;
         right: 0;
-        top: 0;
+        top: -.2em;
     }
 
     .navigation {

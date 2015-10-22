@@ -39,8 +39,8 @@ var config = {
         .pipe(plumber())
         .pipe(gulp.dest(''+ config.public +'/'+ config.theme_dir +'/'+ config.theme +'/assets/css'))
         .pipe(autoprefixer({cascade: false}))
-        .pipe(minifycss())
-        .pipe(gulp.dest(''+ config.public +'/'+ config.theme_dir +'/'+ config.theme +'/assets/css'))
+        //.pipe(minifycss())
+        //.pipe(gulp.dest(''+ config.public +'/'+ config.theme_dir +'/'+ config.theme +'/assets/css'))
         .pipe(notify({ message: 'Styles task complete' }));
     });
 

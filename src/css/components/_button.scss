@@ -71,6 +71,14 @@ input[type="button"] {
         @include button-outline();
     }
 
+    &.raised {
+        box-shadow: .1em .1em .5em rgba($black, 0.1);
+
+        &:hover {
+            box-shadow: .1em .1em .8em rgba($black, 0.2);
+        }
+    }
+
     // Colours
     &.positive,
     &.green,

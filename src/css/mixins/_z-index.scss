@@ -1,0 +1,7 @@
+@mixin z($level: $default) {
+    @if map-has-key($z-index, $level) {
+        z-index: map-get($z-index, $level);
+    } @else {
+        @warn "Level not found.";
+    }
+}

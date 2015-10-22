@@ -1,24 +1,40 @@
 .banner {
-    border-bottom: 1px solid $light-grey;
     @include rem(padding, 1.2rem 2.4rem);
+    position: relative;
 
-    .wrapper,
-    .container {
-        position: relative;
+    .logo {
+        img {
+            @include rem(height, 5.2rem);
+            width: auto;
+        }
     }
 
     .navigation-toggle {
         @include rem(font-size, 2.65rem);
+        line-height: 1em;
+        @include rem(padding, 2.4rem);
         position: absolute;
         right: 0;
-        top: -.2em;
+        top: 0;
     }
 
-    .navigation {
+    .navigation,
+    .telephone {
         display: none;
     }
 
     @include bp('large') {
+
+        .wrapper,
+        .container {
+            position: relative;
+        }
+
+        .logo {
+            img {
+                @include rem(height, 6.7rem);
+            }
+        }
 
         .navigation-toggle {
             display: none;
@@ -42,6 +58,20 @@
                     color: $dark-grey;
                     @include rem(padding, 0 0.75rem);
                 }
+            }
+        }
+
+        .telephone {
+            color: $dark-grey;
+            display: block;
+            @include rem(font-size, 2.8rem);
+            position: absolute;
+            right: 0;
+            top: 0;
+
+            i {
+                color: $brand;
+                margin-right: 0.45em;
             }
         }
 

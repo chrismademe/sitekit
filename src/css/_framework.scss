@@ -12,7 +12,8 @@
 @import "mixins/breakpoint",
         "mixins/clearfix",
         "mixins/rem",
-        "mixins/color";
+        "mixins/color",
+        "mixins/z-index";
 
 // Base
 @import "base/reset",

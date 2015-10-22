@@ -17,11 +17,21 @@ $bp-xlarge:                 1240px !default;
 
 // Grid
 $gutter:                    4%;
-$columns:                  12;
+$columns:                   12;
+
+// Z Index Levels
+$z-index: (
+    bottom:                -9999,
+    default:               1,
+    dropdown:              3000,
+    overlay:               4000,
+    overlay-content:       5000,
+    modal:                 6000
+);
 
 // Colours
-$brand:                     #1bea4a;
-$accent:                    #0dd0f1;
+$brand:                     #89c3d1;
+$accent:                    #F2A18D;
 
 $purple:                    #572e8b;
 $mauve:                     #6f72af;

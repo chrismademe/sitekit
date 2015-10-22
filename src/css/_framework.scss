@@ -8,10 +8,11 @@
 // Variables
 @import "variables";
 
-// Mixins
+// Mixins & Functions
 @import "mixins/breakpoint",
         "mixins/clearfix",
-        "mixins/rem";
+        "mixins/rem",
+        "mixins/color";
 
 // Base
 @import "base/reset",
